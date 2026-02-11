@@ -13,13 +13,13 @@ function App() {
 
     const [isAuth, setIsAuth] = useState(false);
     const [authLoading, setAuthLoading] = useState(true);
-    // const base_url =
-    //     process.env.REACT_APP_BASE_BE_URL;
+    const base_url =
+        process.env.REACT_APP_BASE_BE_URL;
     // console.log("ENV", process.env.REACT_APP_BASE_BE_URL);
 
     // ADDED: Frontend auth check (Auth Guard)
     useEffect(() => {
-        fetch(`/auth/github/status`, {
+        fetch(`${base_url}/auth/github/status`, {
             credentials: "include",
         })
             .then((res) => res.json())
@@ -53,7 +53,7 @@ function App() {
 
     const handleLogout = async () => {
         try {
-            await fetch(`/auth/github/logout`, {
+            await fetch(`${base_url}/auth/github/logout`, {
                 method: "POST",
                 credentials: "include",
             });
@@ -93,7 +93,7 @@ function App() {
 
         try {
             const res = await fetch(
-                `/github/${owner}/${repo}/workflows`,
+                `${base_url}/github/${owner}/${repo}/workflows`,
                 { credentials: "include" },
             );
 
@@ -129,7 +129,7 @@ function App() {
 
         try {
             const res = await fetch(
-                `/github/${owner}/${repo}/workflows/${id}/summary`,
+                `${base_url}/github/${owner}/${repo}/workflows/${id}/summary`,
                 { credentials: "include" },
             );
 
