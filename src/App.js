@@ -182,8 +182,8 @@ function App() {
             <div style={{ textAlign: "center", marginTop: "4rem" }}>
                 <h2>Login Required</h2>
                 <p>Please login with GitHub to continue</p>
-                {/* <a href={`${base_url}/auth/github/login`}> */}
-                <a href={`/auth/github/login`}>
+                <a href={`${base_url}/auth/github/login`}>
+                {/* <a href={`/auth/github/login`}> */}
                     <button>Login with GitHub</button>
                 </a>
             </div>
